@@ -2,21 +2,21 @@
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
+//document.addEventListener("keydown", guessKey);
+const boutonValider = document.getElementById("valider"); //bouton valider
+const result = document.querySelector("#reponse"); // cadre des résultats
+var guess = document.getElementById("guess"); //trouver comment récupérer la value de textContent #guess
 
-const result = document.querySelector("#reponse");
-const mystery = randomNumber(1, 100);
-const guess = document.querySelector("#guess"); //trouver comment récupérer la value de textContent #guess
+const mystery = randomNumber(1, 100); // variable du nombre aléatoire
 
 console.log(mystery);
 
-valider.addEventListener("click", () => {
-  if (this.guess.value === mystery) {
-    result.textContent = "Gagné !";
-  } else if (this.guess.value < mystery) {
-    result.textCeontent = "Raté ! C'est plus grand !";
-  } else {
-    result.textContent = "Raté ! C'est plus petit !";
-  }
-});
+//var key = e.key;
 
-//faire le compteur
+boutonValider.addEventListener("click", (e) => {
+  if (guess.value > mystery) {
+    result.textContent = "C'est moins !";
+  } else if (guess.value < mystery) {
+    result.textContent = "c'est plus !";
+  } else result.textContent = "c'est gagné !";
+});
