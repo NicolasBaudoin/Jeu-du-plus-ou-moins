@@ -1,22 +1,26 @@
+var boutonValider = document.getElementById("valider"); //bouton valider
+var result = document.querySelector("#reponse"); // cadre des résultats
+var guessInput = document.getElementById("guess");
+
 //fonction du nombre aléatoire
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-//document.addEventListener("keydown", guessKey);
-const boutonValider = document.getElementById("valider"); //bouton valider
-const result = document.querySelector("#reponse"); // cadre des résultats
-var guess = document.getElementById("guess"); //trouver comment récupérer la value de textContent #guess
+const MIN = 1;
+const MAX = 99;
+const MYSTERY = randomNumber(MIN, MAX);
 
-const mystery = randomNumber(1, 100); // variable du nombre aléatoire
+//min et max de l'input guess
+guessInput.min = MIN;
+guessInput.max = MAX;
 
-console.log(mystery);
+function submitGuess(e) {
+  let guessValue = e.target[0].value;
+  e.preventDefault();
 
-//var key = e.key;
-
-boutonValider.addEventListener("click", (e) => {
-  if (guess.value > mystery) {
+  if (guessValue > MYSTERY) {
     result.textContent = "C'est moins !";
-  } else if (guess.value < mystery) {
+  } else if (guessValue < MYSTERY) {
     result.textContent = "c'est plus !";
   } else result.textContent = "c'est gagné !";
-});
+}
