@@ -9,12 +9,15 @@
 </head>
 <body>
     <div class="mainPage">
-        <label for="test" id="message">Trouver le nombre mystère entre 0 et 100</label><br>
-        <input type="number" name="test" id="guess">
-        <button id="valider">Go !</button>
+        <label for="test" id="message">Trouver le nombre mystère entre 1 et 99</label><br>
+        <form onsubmit="submitGuess(event)">
+            <input type="number" name="test" id="guess"  placeholder="seul les nombres entre 1 et 99 sont valides">
+            <input type="submit" value="go !" id="valider">
+        </form> 
         
         <p class="reaction" id="reponse"></p>
     </div>
     <script src="pom.js"></script>
 </body>
 </html>
+
