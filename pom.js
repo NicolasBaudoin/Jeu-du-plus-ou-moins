@@ -20,7 +20,12 @@ function submitGuess(e) {
 
   if (guessValue > MYSTERY) {
     result.textContent = "C'est moins !";
+    result.style.color = "blue";
   } else if (guessValue < MYSTERY) {
     result.textContent = "c'est plus !";
-  } else result.textContent = "c'est gagné !";
+    result.style.color = "red";
+  } else {
+    result.textContent = "c'est gagné !";
+    result.style.color = "rgb(0, 242, 0)";
+  }
 }

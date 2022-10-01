@@ -1,49 +1,58 @@
+:root {
+    --clr-background : rgb(0, 0, 154);
+}
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+    background:var(--clr-background) ;
+}
+.mainPage{
+    border: 1px solid red;
+    position: relative;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+    border-radius: 20px;
+    z-index: 0;   
+}
 label{
- 
-    width: 50%;
+    color: rgb(4, 5, 58);
     text-align: center;
-    margin-left: 25%;
-    margin-right: 20%;
-    margin-top: 10%;
-    position: absolute;
-    
+    position: relative;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-size: 20px;   
+    font-weight: bold;
 }
-
-p {
-    border: solid 2px black;
-    padding: 10px;
-    width: 50%;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 20%;
-    margin-top: 20%;
-    position: absolute;
-}
-
 #guess{
-    width: 50%;
-    text-align: center;
-    margin-left: 26%;
-    margin-right: 20%;
-    margin-top: 12%;
-    position: absolute;
-
+    width: 250px;
+    text-align: center; 
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.271);
+    font-weight: bold;
+  
 }
-#valider{
-    
-    text-align: center;
-    margin-left: 50%;
-    margin-right: 20%;
-    margin-top: 16%;
-    position: absolute;
-    background: teal ;
+#valider{ 
+    position: relative;
+    background: yellow;
     cursor: pointer;
-
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    border: 2px rgb(0, 0, 0) solid;
+    border-radius: 20px;
 }
 #valider:hover{
-    background: rgb(8, 183, 183);
+    background: rgb(237, 12, 8);
+    color: white;
+}
+p { 
+    padding: 10px;
+    width: 85%;
+    text-align: center;
+    position: relative;
+    text-transform: capitalize;
+    font-weight: bold;
 }
